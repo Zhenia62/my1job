@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="oval">
+        <size
+            android:width="65dp"
+            android:height="65dp"/>
+        <solid
+            android:color="#F5F5F6"/>
+        <stroke android:color="#DCDCDC" android:width="2dp"/>
+    </shape>
+</item>
+<item>
+    <bitmap
+        android:gravity="center"
+        android:filter="false"
+        android:src="@drawable/facebook" />
+</item>
+</layer-list>

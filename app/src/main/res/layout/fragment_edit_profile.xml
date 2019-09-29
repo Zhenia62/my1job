@@ -1,0 +1,295 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Edit_Profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="@color/light_white"
+            android:elevation="5dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageButton
+                    android:id="@+id/back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/back_btn"
+                    android:text="Редактирование"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/done_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ripple_effect"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Закончить"
+                    android:textColor="@color/coloraccent"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/profile_name_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="О себе"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/about_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:hint="О себе"
+                        android:imeOptions="flagNavigateNext"
+                        android:minLines="3"
+                        android:nextFocusForward="@+id/jobtitle_edit"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/dimgray"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="Должность"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/jobtitle_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:hint="Должность"
+                        android:imeOptions="flagNavigateNext"
+                        android:nextFocusForward="@+id/company_edit"
+                        android:padding="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/dimgray"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="Компания"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/company_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:hint="Компания"
+                        android:imeOptions="flagNavigateNext"
+                        android:nextFocusForward="@+id/school_edit"
+                        android:padding="15dp"
+                        android:paddingLeft="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/dimgray"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="Школа/Институт/Колледж"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/school_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:hint="Школа/Институт/Колледж"
+                        android:imeOptions="actionDone"
+                        android:padding="15dp"
+                        android:singleLine="true"
+                        android:textColor="@color/dimgray"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="Дата рождения"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+                    <EditText
+                        android:id="@+id/dateofbirth_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/transparent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Дата рождения"
+                        android:padding="15dp"
+                        android:textColor="@color/dimgray"
+                        android:textColorHint="@color/gainsboro"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/lightgraycolor"
+                        android:elevation="0.5dp"
+                        android:padding="10dp"
+                        android:text="Пол"
+                        android:textColor="@color/dimgray"
+                        android:textSize="18dp"
+                        android:textStyle="italic" />
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp">
+
+                        <RadioButton
+                            android:id="@+id/male_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Мужчина"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:theme="@style/RadioButton" />
+
+                        <RadioButton
+                            android:id="@+id/female_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Женщина"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:theme="@style/RadioButton" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</FrameLayout>

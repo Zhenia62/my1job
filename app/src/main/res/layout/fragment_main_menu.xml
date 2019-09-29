@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/MainMenuFragment"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ViewPager_layout"
+        android:layout_below="@+id/toolbar">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_weight="1"
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            android:textAlignment="center"
+            app:tabGravity="fill"
+            app:tabPaddingStart="0dp"
+            app:tabPaddingEnd="0dp"
+            android:elevation="5dp"
+            app:tabTextColor="@color/dimgray"
+            app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_marginLeft="-1dp"
+            android:background="@color/light_white"
+            app:tabIndicatorColor="@color/transparent" />
+
+        <com.example.m1j.MainMenuActivity.Custom_ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabs"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </RelativeLayout>
+</FrameLayout>

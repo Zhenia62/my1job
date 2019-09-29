@@ -1,0 +1,41 @@
+
+<resources>
+    <string name="app_name">m1j</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="facebook_app_id">facebook_app_id</string>
+    <string name="fb_login_protocol_scheme">fb_login_protocol_scheme</string>
+
+
+    <string name="subscription_txt">By tapping “Continue”, your payment will be charged to your Google Play
+        account, and your subscription will automatically renew for the same
+        package length at the same price until you cancel it in settings in the
+        Google Play store at least 24 hours prior to the end of the current period.
+        By tapping “Continue”, you agree to our Privacy Policy and Terms.</string>
+
+
+    <!--if you install the app form android studio-->
+    <string name="google_debug_key">google_debug_key</string>
+
+
+    <!--if you install the app form Play store-->
+    <string name="google_release_key">google map release key</string>
+
+
+    <string name="fID">FireBaseID</string>
+    <string name="fURL">FireBaseURL</string>
+    <string name="fAPI">FireBaseAPI</string>
+    <string name="fStorage">FireBaseStorage</string>
+
+
+    <!--debug key if install from android studio or release key if install from playstore-->
+    <string name="Places_api">GooglePlaces_api</string>
+
+
+    <string name="version">13.9</string>
+
+    <string name="device">android</string>
+    <string name="phonetext">Введите ваш номер телефона</string>
+</resources>
+

@@ -1,0 +1,2 @@
+include ':app', ':DragRecylerView'
+rootProject.name='m1j'

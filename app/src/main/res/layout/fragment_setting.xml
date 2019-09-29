@@ -1,0 +1,480 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:background="@color/light_white"
+            android:elevation="5dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/back_btn"
+                    android:layout_width="32dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/back_btn"
+                    android:text="Настройки"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="15dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/one_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="При входе"
+                                android:textColor="@color/pink_color"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="Мое местоположение"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
+                        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                            android:id="@+id/expandable_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/one_layout"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            app:ael_duration="500"
+                            app:ael_expanded="true"
+                            app:ael_interpolator="bounce"
+                            app:ael_orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:id="@+id/two_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:src="@drawable/ic_location_marker"
+                                        android:tint="@color/pink_color" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="5dp"
+                                        android:text="Мое местоположение"
+                                        android:textColor="@color/black" />
+
+                                </LinearLayout>
+
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/current_loction_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:theme="@style/SCBSwitch" />
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/two_layout"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:id="@+id/new_location_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="50dp"
+                                    android:gravity="left"
+                                    android:padding="5dp"
+                                    android:text="Добавить новое местоположение"
+                                    android:textColor="@color/pink_color" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/selected_location_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:theme="@style/SCBSwitch" />
+
+
+                            </RelativeLayout>
+
+                        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp"></com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Дистанция поиска(макс)"
+                                android:textColor="@color/pink_color"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/distance_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="КМ"
+                                android:textColor="@color/black" />
+
+                        </RelativeLayout>
+
+                        <com.zhouyou.view.seekbar.SignSeekBar
+                            android:id="@+id/distance_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="16dp"
+                            android:minHeight="16dp"
+                            android:paddingTop="20dp"
+                            app:ssb_max="1000"
+                            app:ssb_min="5"
+                            app:ssb_progress="1000"
+                            app:ssb_second_track_color="@color/pink_color"
+                            app:ssb_show_section_text="false"
+                            app:ssb_show_thumb_text="false"
+                            app:ssb_thumb_color="@color/pink_color"
+                            app:ssb_thumb_radius="10dp"
+                            app:ssb_track_color="@color/gainsboro"
+                            app:ssb_track_size="5dp" />
+
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="Уведомления"
+                                android:textColor="@color/black" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/show_me_on_binder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:theme="@style/SCBSwitch" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Правила"
+                                android:textColor="@color/pink_color"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/privacy_policy_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/ripple_effect"
+                            android:paddingBottom="5dp"
+                            android:text="Политика Конфиденциальности"
+                            android:textColor="@color/dimgray"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Роль"
+                                android:textColor="@color/pink_color"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="Соискатель/Начальник"
+                                android:textColor="@color/black" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/check_role"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:theme="@style/SCBSwitch" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/logout_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Выйти"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="1dp"
+                    app:shape_roundRect_bottomLeftRadius="3dp"
+                    app:shape_roundRect_bottomRightRadius="3dp"
+                    app:shape_roundRect_topLeftRadius="3dp"
+                    app:shape_roundRect_topRightRadius="3dp">
+
+                    <LinearLayout
+                        android:id="@+id/delete_account_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="Удалить аккаунт"
+                            android:textColor="@color/pink_color" />
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</FrameLayout>
